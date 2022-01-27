@@ -1,6 +1,4 @@
-package Fundamentos.controle;
-
-import java.time.LocalDate;
+package controle;
 
 //2. Criar um programa informa se o ano atual é um ano bissexto;
 public class Exercicio2 {
