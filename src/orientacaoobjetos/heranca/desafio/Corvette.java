@@ -1,15 +1,51 @@
 package orientacaoobjetos.heranca.desafio;
 
-public class Corvette extends Carro {
+public class Corvette extends Carro implements CarroEsportivo, Luxo {
+    private boolean turbo =true;
+    private boolean ar = true;
+
+    @Override
+    public void ligarTurbo() {
+        turbo = true;
+    }
+
+    @Override
+    public void desligarTurbo() {
+        turbo = false;
+    }
+
+    @Override
+    public void ligarAr() {
+        ar = true;
+
+    }
+
+    @Override
+    public void desligarAr() {
+        ar = false;
+    }
+
+    @Override
+    public int getValorAcelarado() {
+        if (turbo && !ar) {
+            return 60;
+        } else if (turbo && ar) {
+            return 55;
+        } else if (!turbo && !ar) {
+            return 45;
+        } else {
+            return 30;
+        }
+    }
 
     public Corvette() {
-        this(250);
-        valorAcelarado = 160;
+        this(315);
     }
 
-    protected Corvette(int velocidade_maxima) {
-        super(velocidade_maxima);
-        valorAcelarado = 160;
+    public Corvette(int velocidaMaxima) {
+        super(velocidaMaxima);
+        this.getValorAcelarado();
     }
+
 
 }
