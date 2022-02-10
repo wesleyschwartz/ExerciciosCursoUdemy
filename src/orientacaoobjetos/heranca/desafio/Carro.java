@@ -3,17 +3,25 @@ package orientacaoobjetos.heranca.desafio;
 public class Carro {
     final int VELOCIDADE_MAXIMA;
     protected double velocidadeAtual = 0;
-    protected int valorAcelarado = 15;
+    private int valorAcelarado = 15;
+
+    public int getValorAcelarado() {
+        return valorAcelarado;
+    }
+
+    public void setValorAcelarado(int valorAcelarado) {
+        this.valorAcelarado = valorAcelarado;
+    }
 
     Carro(int velocidade_maxima) {
-        VELOCIDADE_MAXIMA =velocidade_maxima;
+        VELOCIDADE_MAXIMA = velocidade_maxima;
     }
 
     public double acelerar() {
-        if (velocidadeAtual +valorAcelarado > VELOCIDADE_MAXIMA) {
+        if (velocidadeAtual + getValorAcelarado() > VELOCIDADE_MAXIMA) {
             return velocidadeAtual = VELOCIDADE_MAXIMA;
         } else {
-            return velocidadeAtual += valorAcelarado;
+            return velocidadeAtual += getValorAcelarado();
         }
     }
 
